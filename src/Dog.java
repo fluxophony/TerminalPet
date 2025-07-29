@@ -1,8 +1,9 @@
 public class Dog {
     private String name;
     private String foodName;
-    private boolean hungry = false;
+    private boolean hungry = true;
     private boolean alive = true;
+    private int points = 0;
 
     // Name of pet
     public void setName(String inputName) {
@@ -17,8 +18,21 @@ public class Dog {
         foodName = inputName;
     }
     public void giveFood() {
-        System.out.println(name +" ate the " + foodName + ".");
+        if (hungry) {
+            System.out.println(name + " ate the " + foodName + ".");
+            hungry = false;
+        }
+        else {
+            System.out.println(name + " is not hungry.");
+        }
     }
+
+    //Play stuff
+    public void playWith() {
+        System.out.println("You played with " + name + "!");
+        ++points;
+    }
+
 
     // Print Dog
     public void printDogPicture() {
