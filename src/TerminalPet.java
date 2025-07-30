@@ -21,8 +21,8 @@ public class TerminalPet {
             System.out.println("What would you like to do?");
             System.out.print("Type \"Feed\" to feed " + pet.getName() + ".\n");
             System.out.println("Type \"Play\" to play with " + pet.getName() + ".");
-            System.out.println();
                 if (scnr.next().equals("Feed")) {
+                System.out.println();
                 System.out.print("Enter a food: ");
                 pet.setFoodName(scnr.next());
                 pet.giveFood();
@@ -30,9 +30,6 @@ public class TerminalPet {
                 if (scnr.next().equals("Play")) {
                 pet.playWith();
                 }
-            System.out.println();
-            System.out.println("Type anything to continue");
-            System.out.println();
         }
     }
 }

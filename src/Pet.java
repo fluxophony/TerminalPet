@@ -4,6 +4,7 @@ public class Pet {
     private boolean hungry;
     private boolean alive;
     private int points;
+    private int turns;
 
     //Constructor
     public Pet(String petChoice) {
@@ -12,6 +13,7 @@ public class Pet {
         hungry = true;
         alive = true;
         points = 0;
+        turns = 0;
     }
 
     //Check if pet is alive
@@ -32,18 +34,27 @@ public class Pet {
     }
     public void giveFood() {
         if (hungry) {
+            System.out.println();
             System.out.println(name + " ate the " + foodName + ".");
+            System.out.println();
             hungry = false;
+            ++turns;
+            if (turns > 5) {
+                hungry = true;
+            }
         }
         else {
+            System.out.println();
             System.out.println(name + " is not hungry.");
+            System.out.println();
         }
     }
 
     //Play stuff
     public void playWith() {
+        System.out.println();
         System.out.println("You played with " + name + "!");
-        ++points;
+        ++turns;
     }
 
     //Print picture
