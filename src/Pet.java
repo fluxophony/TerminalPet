@@ -3,7 +3,7 @@ public class Pet {
     private String foodName;
     private boolean hungry;
     private boolean alive;
-    private int points;
+    private String petChoice;
     private int turns;
 
     //Constructor
@@ -12,7 +12,7 @@ public class Pet {
         foodName = "Void";
         hungry = true;
         alive = true;
-        points = 0;
+        this.petChoice = petChoice;
         turns = 0;
     }
 

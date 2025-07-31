@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class TerminalPet {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
+        PetMenu petMenu = new PetMenu();
 
         System.out.print("Choose an animal (cat/dog): ");
         String petChoice = scnr.next();
@@ -16,20 +17,10 @@ public class TerminalPet {
         System.out.println();
         pet.printPicture(petChoice);
 
-        //DECISION
-        while (pet.isAlive()) {
-            System.out.println("What would you like to do?");
-            System.out.print("Type \"Feed\" to feed " + pet.getName() + ".\n");
-            System.out.println("Type \"Play\" to play with " + pet.getName() + ".");
-                if (scnr.next().equals("Feed")) {
-                System.out.println();
-                System.out.print("Enter a food: ");
-                pet.setFoodName(scnr.next());
-                pet.giveFood();
-                }
-                if (scnr.next().equals("Play")) {
-                pet.playWith();
-                }
-        }
+        petMenu.displayMenu(pet);
+        petMenu.scanForChoice(pet);
+        petMenu.takeAnotherChoice(pet);
+
+
     }
 }
